@@ -1,0 +1,69 @@
+:root {
+  --bg-main: #121214;
+  --bg-sidebar: #1e222b;
+  --purple-accent: #7b42bc;
+  --card-bg: #1a1a1e;
+  --text-primary: #ffffff;
+  --text-muted: #a0a5b5;
+  --border-color: #2d2d34;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.app-layout { display: flex; min-height: 100vh; }
+
+.main-viewport {
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page-view { display: none; }
+.page-view.active { display: block; }
+
+/* HEADER ELEMENTS */
+.site-header { margin-bottom: 2rem; }
+.banner-title { background-color: var(--purple-accent); color: #fff; padding: 0.8rem 1.5rem; font-weight: 700; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; border-radius: 6px; }
+
+/* SIDEBAR LAYOUT */
+.sidebar-panel { width: 320px; background-color: var(--bg-sidebar); border-left: 2px solid #000; display: flex; flex-direction: column; }
+.sidebar-promo { background-color: var(--purple-accent); padding: 1.5rem; font-weight: 600; font-size: 1.1rem; text-align: center; border-bottom: 2px solid #000; line-height: 1.4; }
+.sidebar-menu { display: flex; flex-direction: column; }
+.sidebar-btn { background: transparent; border: none; border-bottom: 1px solid var(--border-color); color: var(--text-muted); padding: 1.2rem 1.5rem; text-align: left; font-family: inherit; font-size: 1rem; font-weight: 500; cursor: pointer; text-transform: uppercase; transition: all 0.2s; display: flex; flex-direction: column; text-decoration: none; }
+.sidebar-btn:hover, .sidebar-btn.active { background-color: rgba(255, 255, 255, 0.03); color: var(--text-primary); border-left: 4px solid var(--purple-accent); }
+
+/* CONTACT UNIQUE ELEMENTS */
+.contact-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.contact-email {
+  margin-top: 1.5rem;
+  font-family: 'DM Mono', monospace;
+  background-color: #000;
+  padding: 0.8rem;
+  display: inline-block;
+  border-radius: 4px;
+  color: var(--purple-accent);
+}
+
+.resource-footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .app-layout { flex-direction: column-reverse; }
+  .sidebar-panel { width: 100%; border-left: none; border-top: 2px solid #000; }
+  .main-viewport { padding: 1.2rem; }
+}
