@@ -17,7 +17,7 @@ const calcData = {
         { name: "Structure machine 2", coef: 2, credit: 4, hasTP: false },
         { name: "Analyse 2", coef: 4, credit: 6, hasTP: false },
         { name: "Algèbre 2", coef: 2, credit: 4, hasTP: false },
-        { name: "Intro. Probabilités", coef: 3, credit: 3, hasTP: false },
+        { name: "Intro. Probabilités", coef: 2, credit: 3, hasTP: false },
         { name: "OPM", coef: 1, credit: 2, hasTP: true },
         { name: "TIC", coef: 1, credit: 2, hasTP: false }
     ]
