@@ -3,23 +3,23 @@
  */
 const calcData = {
     s1: [
-        { name: "Analyse 1", coef: 4, credit: 5, hasTP: false },
+        { name: "Analyse 1", coef: 4, credit: 6, hasTP: false },
         { name: "Algèbre 1", coef: 3, credit: 5, hasTP: false },
         { name: "Physique 1 (Mécanique)", coef: 2, credit: 4, hasTP: false },
         { name: "Langue étrangère 1", coef: 1, credit: 2, hasTP: false },
         { name: "Terminologie sc.", coef: 1, credit: 2, hasTP: false },
-        { name: "Structure machine 1", coef: 3, credit: 5, hasTP: true },
+        { name: "Structure machine 1", coef: 3, credit: 5, hasTP: false },
         { name: "Algorithmique 1", coef: 4, credit: 6, hasTP: true }
     ],
     s2: [
         { name: "Physique 2", coef: 2, credit: 3, hasTP: false },
         { name: "Algorithmique 2", coef: 4, credit: 6, hasTP: true },
-        { name: "Structure machine 2", coef: 2, credit: 4, hasTP: true },
+        { name: "Structure machine 2", coef: 2, credit: 4, hasTP: false },
         { name: "Analyse 2", coef: 4, credit: 6, hasTP: false },
         { name: "Algèbre 2", coef: 2, credit: 4, hasTP: false },
-        { name: "Intro. Probabilités", coef: 2, credit: 3, hasTP: false },
+        { name: "Intro. Probabilités", coef: 3, credit: 3, hasTP: false },
         { name: "OPM", coef: 1, credit: 2, hasTP: true },
-        { name: "TIC", coef: 1, credit: 2, hasTP: true }
+        { name: "TIC", coef: 1, credit: 2, hasTP: false }
     ]
 };
 
