@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Script A is our single source of truth.
-const SCRIPT_A_URL = "https://script.google.com/macros/s/AKfycbzULhdk6PKSHM6JDhEoK20OG2yXiCLYXC6gQJ7xmuJKuSPTB4SDuRcMvrPA4Wu47BPm1Q/exec";
+const SCRIPT_A_URL = "https://script.google.com/macros/s/AKfycby_TgvU27JqNCFfz0jFfPQDrtKm1qCv3784ZbbHZty7WLGWvXWS4gOmvFoCLQ8Kpxe4VQ/exec";
 
 let GLOBAL_FILE_CACHE = {};
 let isSyncing = false;
