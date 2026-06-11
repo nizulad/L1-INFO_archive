@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>archive L1-info calcul de moyenne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <main class="main-viewport">
+      
+      <section id="view-calculator" class="page-view active">
+        <header class="site-header">
+          <div class="banner-title">CALCULATEUR DE MOYENNE</div>
+          <div class="banner-subtitle">1ère Année Licence Informatique (S1 & S2)</div>
+        </header>
+
+        <div class="calculator-grid">
+          <div class="semester-card" id="s1-card">
+            <div class="card-header">
+              <h2>Semestre 1</h2>
+              <div class="semester-stats">
+                <div class="stat"><span class="label">Moyenne</span><span class="value" id="s1-avg">0.00</span></div>
+                <div class="stat"><span class="label">Crédits</span><span class="value" id="s1-credit">0</span></div>
+              </div>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Module</th><th>Coef</th><th>Crédit</th><th>Exam (60%)</th><th>TD</th><th>TP</th><th>Moy</th></tr>
+                </thead>
+                <tbody id="s1-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="semester-card" id="s2-card">
+            <div class="card-header">
+              <h2>Semestre 2</h2>
+              <div class="semester-stats">
+                <div class="stat"><span class="label">Moyenne</span><span class="value" id="s2-avg">0.00</span></div>
+                <div class="stat"><span class="label">Crédits</span><span class="value" id="s2-credit">0</span></div>
+              </div>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Module</th><th>Coef</th><th>Crédit</th><th>Exam (60%)</th><th>TD</th><th>TP</th><th>Moy</th></tr>
+                </thead>
+                <tbody id="s2-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="annual-summary">
+          <h2>Résultat Annuel</h2>
+          <div class="summary-grid">
+            <div class="summary-item"><span class="summary-label">Moyenne Générale</span><span class="summary-value" id="year-avg">0.00</span></div>
+            <div class="summary-item"><span class="summary-label">Crédits Totaux</span><span class="summary-value" id="year-credit">0</span></div>
+            <div class="summary-item"><span class="summary-label">Décision</span><span class="summary-value decision" id="year-decision">En attente</span></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="resource-footer">
+        <p>💡 Vous avez des cours, des TD corrigés ou des examens à partager ? **Aidez vos camarades d'USTHB !** Contactez-nous pour enrichir la plateforme.</p>
+      </footer>
+    </main>
+
+    <aside class="sidebar-panel">
+      <div class="sidebar-promo">
+        Le site N°1 pour exceller à tous vos examens d'Informatique !
+      </div>
+      <nav class="sidebar-menu">
+        <a href="../index.html" id="sidebar-btn-main" class="sidebar-btn">menu principal</a>
+        <a href="calc.html" id="sidebar-btn-calc" class="sidebar-btn active">calcul de moyenne</a>
+        <a href="../contact/contact.html" id="sidebar-btn-contact" class="sidebar-btn">nous contacter</a>
+      </nav>
+    </aside>
+  </div>
+
+  <script src="calc.js"></script>
+</body>
+</html>
