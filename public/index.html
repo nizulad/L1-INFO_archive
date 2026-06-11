@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L1-info archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- MAIN CONTENT VIEWPORT -->
+    <main class="main-viewport">
+      
+      <section id="view-resources" class="page-view active">
+        <header class="site-header">
+          <div class="banner-title">L1 INFORMATIQUE</div>
+          <div class="banner-subtitle">cours , examens , documents utils ... etc</div>
+        </header>
+
+        <nav class="sem-tabs" id="semTabs" role="tablist" aria-label="Semestres" style="display:none;"></nav>
+        <nav class="breadcrumb" id="breadcrumb" aria-label="Fil d'Ariane"></nav>
+
+        <div class="search-wrap" id="searchWrap" hidden>
+          <span class="search-icon">⌕</span>
+          <input type="search" class="search-input" id="searchInput" placeholder="Rechercher une matière…" autocomplete="off" spellcheck="false">
+          <kbd class="search-kbd">ESC</kbd>
+        </div>
+
+        <div class="grid" id="grid" role="list"></div>
+      </section>
+
+      <footer class="resource-footer">
+        <p>💡 Vous avez des cours, des TD corrigés ou des examens à partager ? **Aidez vos camarades d'USTHB !** Contactez-nous pour enrichir la plateforme.</p>
+      </footer>
+    </main>
+
+    <!-- RIGHT HAND PANEL SIDEBAR -->
+    <aside class="sidebar-panel">
+      <div class="sidebar-promo">
+        Le site N°1 pour exceller à tous vos examens d'Informatique !
+      </div>
+      <nav class="sidebar-menu">
+        <a href="index.html" id="sidebar-btn-main" class="sidebar-btn active">menu principal</a>
+        <a href="calculatrice/calc.html" id="sidebar-btn-calc" class="sidebar-btn">Calcul de moyenne</a>
+        <a href="contact/contact.html" id="sidebar-btn-contact" class="sidebar-btn">nous contacter</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- ── FILE LIST MODAL (Secured with inline hidden styles) ── -->
+  <div class="modal-overlay file-modal-overlay" id="fileModalOverlay" role="dialog" aria-modal="true" aria-label="Liste des fichiers" hidden style="display: none !important;">
+    <div class="modal file-modal">
+      <div class="modal-header">
+        <div class="modal-meta">
+          <span class="modal-icon">📂</span>
+          <div>
+            <div class="modal-title" id="fileModalTitle">Documents</div>
+            <div class="modal-path" id="fileModalPath"></div>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="fileModalClose" aria-label="Fermer">✕</button>
+        </div>
+      </div>
+      <div class="modal-body file-modal-body" id="fileModalList"></div>
+    </div>
+  </div>
+
+  <!-- ── DRIVE PREVIEW MODAL (Secured with inline hidden styles) ── -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Aperçu Google Drive" hidden style="display: none !important;">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-meta">
+          <span class="modal-icon" id="modalIcon">📁</span>
+          <div>
+            <div class="modal-title" id="modalTitle">Dossier Drive</div>
+            <div class="modal-path" id="modalPath"></div>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <a id="modalOpenBtn" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ouvrir dans Drive</a>
+          <button class="btn btn-ghost" id="modalClose" aria-label="Fermer">✕</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-loading" id="modalLoading" aria-live="polite">
+          <div class="spinner"></div><span>Chargement...</span>
+        </div>
+        <div class="modal-unconfigured" id="modalUnconfigured" hidden>
+          <div class="unconfigured-title">Lien non configuré</div>
+        </div>
+        <iframe id="modalIframe" title="Aperçu Google Drive" allow="autoplay" loading="lazy" hidden></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts Layout -->
+  <script src="structure.js"></script>
+  
+  <!-- INTERCEPTOR SCRIPT: Runs right before app.js to break automatic popups -->
+  <script>
+    // Force override potential auto-open triggers in app.js on initial boot
+    window.addEventListener('DOMContentLoaded', () => {
+      const fileModal = document.getElementById('fileModalOverlay');
+      const driveModal = document.getElementById('modalOverlay');
+      
+      // Keep them strictly hidden on raw page compilation
+      if (fileModal) { fileModal.setAttribute('hidden', ''); fileModal.style.setProperty('display', 'none', 'important'); }
+      if (driveModal) { driveModal.setAttribute('hidden', ''); driveModal.style.setProperty('display', 'none', 'important'); }
+    });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
