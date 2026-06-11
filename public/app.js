@@ -330,14 +330,6 @@ async function fetchFileListFromScriptA(code) {
   return await response.json();
 }
 
-// Communicates with your server.js pass-through endpoint to handle individual secure links
-async function fetchFileLinkFromScriptB(code, index) {
-  const response = await fetch(`${BACKEND_SERVER_URL}/api/link?code=${encodeURIComponent(code)}&index=${index}`);
-  if (!response.ok) throw new Error("Local proxy link resolution pass-through failed.");
-  return await response.json();
-}
-
-
 // ═══════════════════════════════════════════════════════════════
 //  HELPER 2: UI File Row Renderer Utility
 // ═══════════════════════════════════════════════════════════════
@@ -518,18 +510,12 @@ async function openFileModal(code, folderLabel) {
       row.appendChild(textWrapper);
       row.appendChild(actionIconBox);
 
-      // Secure link execution block triggered on click
-      row.addEventListener('click', async () => {
-        if (typeof showToast === 'function') showToast('Récupération du lien sécurisé...', 'info');
-        try {
-          const result = await fetchFileLinkFromScriptB(code, file.index);
-          if (result.status === 'ok' && result.link) {
-            window.open(result.link, '_blank');
-          } else {
-            if (typeof showToast === 'function') showToast(result.message || 'Lien introuvable.', 'error');
-          }
-        } catch (err) {
-          if (typeof showToast === 'function') showToast('Erreur de chargement réseau.', 'error');
+      // 🔥 FIXED INSTANT CLICK: Reads pre-fetched link right out of server memory
+      row.addEventListener('click', () => {
+        if (file.link) {
+          window.open(file.link, '_blank');
+        } else {
+          if (typeof showToast === 'function') showToast('Lien introuvable dans le cache.', 'error');
         }
       });
 
@@ -537,7 +523,7 @@ async function openFileModal(code, folderLabel) {
     });
   };
 
-  // 4. FIRE THE EXECUTION PIPELINE LIVE (Calls Script A)
+  // 4. FIRE THE EXECUTION PIPELINE LIVE (Calls Script A proxy route)
   try {
     const data = await fetchFileListFromScriptA(code);
     
