@@ -88,7 +88,7 @@ const EXAM_TYPES = {
 };
 
 // Apps Script URLs
-const SCRIPT_A_URL = "https://script.google.com/macros/s/AKfycbx_PGm2jt7RSIhHUkWhKtJG0Y6n3RVblCBAJB3iSRxQzQZzSmoGiRN9zPvaFLAf7P3w-A/exec"; // returns file list
+const SCRIPT_A_URL = "https://script.google.com/macros/s/AKfycbw98einoMM0JdBv1oAbiyks3c5qF4P749bIz8p65CoOalGVJmJAoPvxqfx39UMjAjsroQ/exec"; // returns file list
 const SCRIPT_B_URL = "https://script.google.com/macros/s/AKfycbzyT12oT4XVy9tOd-A1KE7ppiiB9qz4HWPFrfplJX3Yj3uL4br_g9coWgCofTJ_hXt8/exec"; // returns file link
 
 /**
